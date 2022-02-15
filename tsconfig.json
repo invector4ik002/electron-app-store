@@ -24,7 +24,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "context/app.context.tsч"  ],
   "exclude": [
     "node_modules"
   ]

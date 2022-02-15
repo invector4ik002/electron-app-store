@@ -1,19 +1,26 @@
-import { PProps } from './Tag.props';
-import style from './P.module.css';
+import { TagProps } from './Tag.props';
+import style from './Tag.module.css';
 import cn from 'classnames';
 
-export const Tag = ({  size = 'm', children, className, ...props }: PProps): JSX.Element => {
+export const Tag = ({ size = 'm', children, color = 'primary', href, className, ...props }: TagProps): JSX.Element => {
 
 	return (
-		<p
-			className={cn(style.p, className, {
-				[style.s]: size =='s',
-				[style.m]: size =='m',
-				[style.l]: size =='l',
+		<div
+			className={cn(style.tag, className, {
+				[style.s]: size == 's',
+				[style.m]: size == 'm',
+				[style.ghost]: color == 'ghost',
+				[style.grey]: color == 'grey',
+				[style.red]: color == 'red',
+				[style.green]: color == 'green',
+				[style.primary]: color == 'primary',
 			})}
 			{...props}
-		>
-			{children}
-		</p>
+		>{
+				href ?
+					<a href={href}>{children}</a>
+					: <>{children}</>
+			}
+		</div>
 	)
 }

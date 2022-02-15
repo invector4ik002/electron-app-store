@@ -7,17 +7,19 @@ export const Button = ({ appearance, arrow = 'none', children, className, ...pro
 	return (
 		<button
 			className={cn(style.button, className, {
-				[style.primary]: appearance =='primary',
-				[style.ghost]: appearance =='ghost',
+				[style.primary]: appearance == 'primary',
+				[style.ghost]: appearance == 'ghost',
 			})}
 			{...props}
 		>
 			{children}
-			{arrow !="none" && <span className={cn(style.arrow, {
-				[style.down]: arrow == 'down',
-			})}>
-				<ArrowIcon />
-				</span>}
+			{
+				arrow != "none" && <span className={cn(style.arrow, {
+					[style.down]: arrow == 'down',
+				})}>
+					<ArrowIcon />
+				</span>
+			}
 		</button>
 	)
 }

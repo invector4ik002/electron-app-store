@@ -2,7 +2,6 @@ import React from "react";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import axios from "axios";
 
-// import { Layout } from "../../Layout/Layout";
 import { MenuItem } from "../../interfaces/menu.interfaces";
 import { TopPageModel } from "../../interfaces/page.interfaces";
 import { ParsedUrlQuery } from "querystring";
@@ -16,12 +15,9 @@ export default function Course({ menu, page, products }: CourseProps): JSX.Eleme
   console.log('page :>> ', page);
   console.log('products :>> ', products);
   return (
-    // <Layout>
     <>
     {products.length}
     </>
-      
-    // {/* </Layout> */}
   )
 }
 

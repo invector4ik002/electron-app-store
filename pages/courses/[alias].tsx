@@ -11,9 +11,6 @@ const firstCategory = 0;
 
 export default function Course({ menu, page, products }: CourseProps): JSX.Element {
 
-  console.log('menu :>> ', menu);
-  console.log('page :>> ', page);
-  console.log('products :>> ', products);
   return (
     <>
     {products.length}
@@ -77,7 +74,6 @@ interface CourseProps {
 
 // export default function Product({ menu }: HomProps) {
 
-//   console.log('object :>> ', menu);
 //   return (
 //     <div>alias</div>
 //   )

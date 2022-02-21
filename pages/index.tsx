@@ -6,11 +6,10 @@ import { Htag, Button, P, Tag, Rating } from "../components";
 import { MenuItem } from "../interfaces/menu.interfaces";
 import { withLayout } from "../Layout/Layout";
 
-function Home({ menu }: HomProps) {
+export function Home({ menu }: HomProps) {
   const [rating, setRating] = React.useState<number>(4)
 
   return (
-
     <>
       <Htag tag="h1">Тест заголовок</Htag>
       <Button appearance='primary' arrow='right'>ТестКнопка</Button>

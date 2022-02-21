@@ -6,10 +6,11 @@ import { MenuItem } from "../../interfaces/menu.interfaces";
 import { TopPageModel } from "../../interfaces/page.interfaces";
 import { ParsedUrlQuery } from "querystring";
 import { ProductModel } from "../../interfaces/product.interfaces";
+import { withLayout } from "../../Layout/Layout";
 
 const firstCategory = 0;
 
-export default function Course({ menu, page, products }: CourseProps): JSX.Element {
+function Course({ menu, page, products }: CourseProps): JSX.Element {
 
   return (
     <>
@@ -17,6 +18,8 @@ export default function Course({ menu, page, products }: CourseProps): JSX.Eleme
     </>
   )
 }
+
+export default withLayout(Course);
 
 export const getStaticPaths: GetStaticPaths = async () => {
 
@@ -58,42 +61,9 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({ params }: Ge
   }
 }
 
-interface CourseProps {
+interface CourseProps extends Record<string, unknown> {
   menu: MenuItem[];
   firstCategory: number;
   page: TopPageModel;
   products: ProductModel[];
 }
-// import React from "react";
-// import { GetStaticProps } from 'next';
-// import axios from "axios";
-
-// import { Htag, Button, P, Tag, Rating } from "../components";
-// import { Layout } from "../Layout/Layout";
-// import { MenuItem } from "../interfaces/menu.interfaces";
-
-// export default function Product({ menu }: HomProps) {
-
-//   return (
-//     <div>alias</div>
-//   )
-// }
-
-// export const getStaticProps: GetStaticProps<ProductProps> = async () => {
-//   const firstCategory = 0;
-//   const { data: menu } = await axios.post<ProductProps[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
-//     firstCategory
-//   });
-  
-//   return {
-//     props: {
-//       menu,
-//       firstCategory
-//     }
-//   }
-// }
-
-// interface ProductProps {
-//   menu: MenuItem[];
-//   firstCategory: number;
-// }

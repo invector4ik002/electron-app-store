@@ -18,8 +18,10 @@
 .firstLevel:hover svg {
   fill: var(--primary)
 }
-
-.secondLevel {
+.secondLevel{
+  cursor: pointer;
+}
+.secondLevelBlock {
   margin-bottom: 10px;
   cursor: pointer;
   text-transform: uppercase;
@@ -35,6 +37,12 @@
   border-left: 2px solid #DFDFDF;
 }
 
+.secondLevelBlock {
+  display: none;
+}
+.secondLevelBlockOpened{
+  display: block;
+}
 .thirdLevel {
   /* margin-bottom: 10px; */
   cursor: pointer;

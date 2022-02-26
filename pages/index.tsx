@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps<HomProps> = async () => {
   }
 }
 
-interface HomProps {
+interface HomProps extends Record <string, unknown> {
   menu: MenuItem[];
   firstCategory: number;
 }

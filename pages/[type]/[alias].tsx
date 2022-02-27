@@ -3,18 +3,23 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import axios from "axios";
 
 import { MenuItem } from "../../interfaces/menu.interfaces";
-import { TopPageModel } from "../../interfaces/page.interfaces";
+import { TopLevelCategory, TopPageModel } from "../../interfaces/page.interfaces";
 import { ParsedUrlQuery } from "querystring";
 import { ProductModel } from "../../interfaces/product.interfaces";
 import { withLayout } from "../../Layout/Layout";
 import { firstLevelMenu } from "../../helpers/helpers";
+import { ProductComponent } from "../../page-component";
 
-function Course({ menu, page, products }: CourseProps): JSX.Element {
+function Course({ menu, page, products, firstCategory }: CourseProps): JSX.Element {
 
   return (
     <>
-    somePage
-      {products && products.length}
+      ProductComponent
+      <ProductComponent
+        firstCategory={firstCategory}
+        products={products}
+        page={page}
+      />
     </>
   )
 }
@@ -58,7 +63,7 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({ params }: Ge
       firstCategory: firstCategoryItem.id
     });
 
-    if(menu.length == 0) {
+    if (menu.length == 0) {
       return {
         notFound: true
       }
@@ -88,7 +93,7 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({ params }: Ge
 
 interface CourseProps extends Record<string, unknown> {
   menu: MenuItem[];
-  firstCategory: number;
+  firstCategory: TopLevelCategory;
   page: TopPageModel;
   products: ProductModel[];
 }

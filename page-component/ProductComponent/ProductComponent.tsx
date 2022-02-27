@@ -1,6 +1,6 @@
 import style from './ProductComponent.module.css';
 import { ProductComponentProps } from './ProductComponentProps';
-import { Card, Htag, Tag } from '../../components';
+import { Htag, Tag, DataHh } from '../../components';
 
 export const ProductComponent = ({ products, page, firstCategory }: ProductComponentProps): JSX.Element => {
   console.log('page :>> ', page);
@@ -19,12 +19,7 @@ export const ProductComponent = ({ products, page, firstCategory }: ProductCompo
         <Htag tag='h2'>Вакансии - {page.category}</Htag>
         <Tag color='red' size='m'>hh.ru</Tag>
       </div>
-      <div className={style.hh}>
-        <Card className={style.hhCound}>
-          <div className={style.hhStatTitle}>Всего вакансий</div>
-          <div className={style.hhStatCound}>{page.hh?.count}</div>
-        </Card>
-      </div>
+      <DataHh { ...page.hh}/>
     </div>
   )
 }

@@ -39,11 +39,11 @@
 			"footer";
 	}
 
+	.sidebar {
+		display: none !important;
+	}
+	
 	.header {
 		display: block;
-	}
-
-	.sidebar {
-		display: none;
 	}
 }

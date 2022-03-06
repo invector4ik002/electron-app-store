@@ -26,7 +26,9 @@ export const Rating = ({ isEditable = false, setRating, rating, className, ...pr
         >
           <StarIcon
             tabIndex={isEditable ? 0 : -1}
-            onKeyDown={(e: KeyboardEvent<SVGElement>) => isEditable && handleSpace(idx + 1, e)}
+            onKeyDown={(e: KeyboardEvent<SVGElement>) => {
+              return isEditable && handleSpace(idx + 1, e);
+            }}
           />
         </span>
       )

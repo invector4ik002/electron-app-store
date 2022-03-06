@@ -1,10 +1,13 @@
 import style from './ProductComponent.module.css';
 import { ProductComponentProps } from './ProductComponentProps';
 import { Htag, Tag, DataHh } from '../../components';
+import { TopLevelCategory } from '../../interfaces/page.interfaces';
 
 export const ProductComponent = ({ products, page, firstCategory }: ProductComponentProps): JSX.Element => {
-  console.log('page :>> ', page);
-  console.log('products :>> ', products);
+  // console.log('page :>> ', page);
+  // console.log('products :>> ', products);
+  console.log('TopLevelCategory :>> ', TopLevelCategory.Courses);
+  console.log('firstCategory :>> ', firstCategory);
   return (
     <div className={style.wrapper}>
       <div className={style.title}>
@@ -19,7 +22,10 @@ export const ProductComponent = ({ products, page, firstCategory }: ProductCompo
         <Htag tag='h2'>Вакансии - {page.category}</Htag>
         <Tag color='red' size='m'>hh.ru</Tag>
       </div>
-      <DataHh { ...page.hh}/>
+      {firstCategory == TopLevelCategory.Courses && page.hh && <DataHh {...page.hh} />}
+      {page.advantages && page.advantages.length > 0 && <>
+        <Htag tag='h2'>Приемущества</Htag>
+      </>}
     </div>
   )
 }

@@ -14,7 +14,6 @@ function Course({ menu, page, products, firstCategory }: CourseProps): JSX.Eleme
 
   return (
     <>
-      ProductComponent
       <ProductComponent
         firstCategory={firstCategory}
         products={products}

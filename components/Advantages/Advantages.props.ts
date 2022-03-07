@@ -1,5 +1,5 @@
-import { HhData } from "../../interfaces/page.interfaces";
+import { TopPageAdvantage } from "../../interfaces/page.interfaces";
 
-export interface AdvantagesProps extends HhData {
-
+export interface AdvantagesProps {
+  advantages: TopPageAdvantage[];
 }

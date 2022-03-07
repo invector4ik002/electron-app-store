@@ -1,6 +1,11 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-export interface PProps extends DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> {
-  size?: 's' | 'm' | 'l';
-  children: React.ReactNode;
+export interface SortProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  sort: SortEnum;
+  setSort: (sort: SortEnum) => void;
+}
+
+export enum SortEnum {
+  Rating,
+  Price,
 }

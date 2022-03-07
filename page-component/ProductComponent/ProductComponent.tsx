@@ -2,6 +2,7 @@ import style from './ProductComponent.module.css';
 import { ProductComponentProps } from './ProductComponentProps';
 import { Htag, Tag, DataHh, Advantages, P, Sort } from '../../components';
 import { TopLevelCategory } from '../../interfaces/page.interfaces';
+import { SortEnum } from '../../components/Sort/Sort.props';
 
 export const ProductComponent = ({ products, page, firstCategory }: ProductComponentProps): JSX.Element => {
   // console.log('page :>> ', page);
@@ -12,8 +13,7 @@ export const ProductComponent = ({ products, page, firstCategory }: ProductCompo
       <div className={style.title}>
         <Htag tag='h1'>{page.title}</Htag>
         {products && <Tag color='grey' size='m'>{products.length}</Tag>}
-        <span>сортировка</span>
-        {/* <Sort sort=/> */}
+        <Sort sort={SortEnum.Rating} setSort={()=>{ }}/>
       </div>
       <div>
         {products && products.map((p) => <div key={p._id}>{p.title}</div>)}

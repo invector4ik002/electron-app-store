@@ -2,7 +2,7 @@ import React from "react";
 import { GetStaticProps } from 'next';
 import axios from "axios";
 
-import { Htag, Button, P, Tag, Rating } from "../components";
+import { Htag, Button, P, Tag, Rating, Input } from "../components";
 import { MenuItem } from "../interfaces/menu.interfaces";
 import { withLayout } from "../Layout/Layout";
 
@@ -23,6 +23,7 @@ export function Home({ menu }: HomProps) {
       <Tag size="s" color='green'>ТестТег</Tag>
       <Tag size="s" color='primary'>ТестТег</Tag>
       <Rating rating={rating} isEditable setRating={setRating} />
+      <Input placeholder="test"/>
     </>
   )
 }

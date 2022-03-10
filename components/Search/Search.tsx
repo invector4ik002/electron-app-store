@@ -42,7 +42,7 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
 				className={style.button}
 				appearance='primary'
 				onClick={goToSearch}
-				onKeyDown={handleKeyDown}
+				onKeyPress={handleKeyDown}
 			>
 				<GlassIcon />
 			</Button>

@@ -53,3 +53,30 @@
 .feature {
   grid-column: start / middle;
 }
+
+.logo img {
+  border-radius:5px;
+} 
+
+.month { 
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  align-self: flex-end;
+}
+
+.price, .credit {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  align-self: flex-end;
+}
+
+.oldPrice {
+  margin: 0 0 0 10px;
+}

@@ -30,7 +30,8 @@ const setSort = (sort: SortEnum) => {
         <Tag color='red' size='m'>hh.ru</Tag>
       </div>
       {firstCategory == TopLevelCategory.Courses && page.hh && <DataHh {...page.hh} />}
-      {page.advantages && page.advantages.length > 0 && <>
+      {page.advantages && page.advantages.length > 0 && 
+      <>
         <Htag tag='h2'>Приемущества</Htag>
         <Advantages advantages={page.advantages} />
       </>}

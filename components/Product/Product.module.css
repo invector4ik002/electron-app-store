@@ -16,7 +16,7 @@
 	padding: 30px;
 }
 .category {
-	margin: 7px 0 0 0;
+	margin: 7px 5px 0 0;
 }
 
 .logo {
@@ -85,6 +85,61 @@
 	line-height: 27px;
 }
 
+.reviewButton {
+	margin: 0 0 0 30px;
+}
+
+.advBlock {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.advTitle {
+	font-weight: bold;
+	margin: 0 0 5px 0;
+}
+
+.disAdvantages {
+	margin: 20px 0 0 0;
+	padding-left: 10px;
+	border-left: 2px solid var(--red);
+}
+
+.advantages {
+	padding-left: 10px;
+	border-left: 2px solid var(--green);
+}
+
 .oldPrice {
 	margin: 0 0 0 10px;
+}
+
+.description {
+	margin: 0 0 14px 0;
+}
+
+.characteristics {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	margin: 0 60px 0 0;
+	gap: 10px;
+
+	font-size: 16px;
+	line-height: 32px
+}
+
+.characteristicsName {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 32px;
+}
+
+.characteristicsDot {
+	border-bottom: 1px dashed var(--grey-dark);
+	
+	margin:0 0 10px 0;
+}
+
+@media screen (min-width: 1340px) {
+	
 }

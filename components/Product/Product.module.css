@@ -33,16 +33,19 @@
 .price,
 .priceTitle {
 	grid-column: pricestart / priceend;
+	white-space: nowrap;
 }
 
 .credit,
 .creditTitle {
 	grid-column: creditstart / creditend;
+	white-space: nowrap;
 }
 
 .rating,
 .rateTitle {
 	grid-column: ratestart / end;
+	white-space: nowrap;
 }
 
 .hr,
@@ -94,7 +97,7 @@
 	line-height: 22px;
 }
 
-.advTitle {
+.advBlock {
 	font-weight: bold;
 	margin: 0 0 5px 0;
 }
@@ -140,6 +143,177 @@
 	margin:0 0 10px 0;
 }
 
-@media screen (min-width: 1340px) {
+@media screen and (max-width: 1320px) {
+	.product {
+		display: grid;
+		grid-template-columns:
+			70px
+			30px
+			auto
+			40px
+			auto
+			40px
+			1fr;
+			grid-template-areas:
+				'logo . title title title title title'
+				'logo . tags tags tags tags tags'
+				'price price price . credit . rating'
+				'priceTitle priceTitle priceTitle . creditTitle . rateTitle'
+				'hr hr hr hr hr hr hr'
+				'description description description description description description description'
+				'feature feature feature feature feature feature feature'
+				'advBlock advBlock advBlock advBlock advBlock advBlock advBlock'
+				'hr2 hr2 hr2 hr2 hr2 hr2 hr2'
+				'actions actions actions actions actions actions actions'
+			;
+		/* margin: 0 0 30px;
+		padding: 30px; */
+	}
+
+	.logo {
+		grid-area: logo;
+		margin: 0 0 20px 0;
+	}
+
+	.title {
+		grid-area: title;
+	}
+
+ 	.rateTitle {
+		grid-area: rateTitle;
+ 	}
+
+	.credit {
+		grid-area: credit;
+	}
+
+	.rating {
+		grid-area: rating;
+	}
+
+	.price {
+		grid-area: price;
+	}
+
+	.creditTitle {
+		grid-area: creditTitle;
+ 	}
+
+	.tags {
+		grid-area: tags;
+	}
+
+	.priceTitle {
+		grid-area: priceTitle;
+	}
+
+	.hr {
+		grid-area: hr;
+	}
+
+	.description {
+		grid-area: description;
+	}
+
+	.feature {
+		grid-area: feature;
+		margin: 0 0 20px 0;
+	}
+
+	.advBlock {
+		grid-area: advBlock;
+	}
+
+	.hr2 {
+		grid-area: hr2;
+	}
+
+	.actions {
+		grid-area: actions;
+	}
 	
+}
+
+@media screen and (max-width: 640px) {
+	.product {
+		display: grid;
+		grid-template-columns:
+			70px
+			30px
+
+			1fr;
+			grid-template-areas:
+				'logo . title'
+				'logo . tags'
+				'priceTitle priceTitle price'
+				'creditTitle creditTitle credit'
+				'rateTitle rateTitle rating'
+				/* 'price price price . credit . rating' */
+				'hr hr hr'
+				'description description description'
+				'feature feature feature'
+				'advBlock advBlock advBlock'
+				'hr2 hr2 hr2'
+				'actions actions actions'
+			;
+		/* margin: 0 0 30px;
+		padding: 30px; */
+	}
+
+	.logo {
+		margin: 0 0 10px 0;
+	}
+
+	.credit {
+		margin: 0 0 10px 0;
+	}
+
+	.rating {
+		margin: 0 0 10px 0;
+	}
+
+	.price {
+		margin: 0 0 10px 0;
+	}
+
+	.tags {
+		margin: 0 0 10px 0;
+	}
+
+}
+
+@media screen and (max-width: 480px) {
+	.product {
+		display: grid;
+		grid-template-columns: 1fr;
+			grid-template-areas:
+				'logo'
+				'title'
+				'tags'
+				'price'
+				'priceTitle'
+				'credit'
+				'creditTitle'
+				'rating'
+				'rateTitle'
+				'hr'
+				'description'
+				'feature '
+				'advBlock'
+				'hr2'
+				'actions'
+			;
+	}
+
+	.price, 
+	.credit, 
+	.rating {
+		margin: 0 0 0 0;
+	}
+
+	.priceTitle, 
+	.creditTitle {
+		margin: 0 0 10px 0;
+	}
+
 }

@@ -12,7 +12,7 @@
 		[ratestart] auto
 		[end];
 
-	margin: 0 0 30px;
+	margin: 30px 0 0 0;
 	padding: 30px;
 }
 .category {
@@ -97,10 +97,10 @@
 	line-height: 22px;
 }
 
-.advBlock {
-	font-weight: bold;
-	margin: 0 0 5px 0;
-}
+/* .advBlock { */
+	/* font-weight: bold;
+	margin: 0 0 5px 0; */
+/* } */
 
 .disAdvantages {
 	margin: 20px 0 0 0;
@@ -108,7 +108,14 @@
 	border-left: 2px solid var(--red);
 }
 
+.advTitle {
+	font-weight: bold;
+	margin: 0 0 5px 0;
+}
+
 .advantages {
+	font-size: 16px;
+	line-height: 22px;
 	padding-left: 10px;
 	border-left: 2px solid var(--green);
 }
@@ -141,6 +148,21 @@
 	border-bottom: 1px dashed var(--grey-dark);
 	
 	margin:0 0 10px 0;
+}
+
+.closed {
+	overflow: hidden;
+	max-height: 0;
+	padding: 0;
+}
+
+.opened {
+	max-height: auto;
+	padding: 30px;
+}
+
+.reviews {
+
 }
 
 @media screen and (max-width: 1320px) {

@@ -10,6 +10,7 @@ import { Button } from '../Button/Button';
 import { Divider } from '../Divider/Divider';
 import Image from 'next/image';
 import { Review } from '../Review/Review';
+import { ReviewForm } from '../ReviewForm/ReviewForm';
 
 export const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
 
@@ -66,9 +67,9 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 				<Divider className={cn(style.hr, style.hr2)} />
 				<div className={style.actions}>
 					<Button appearance={'primary'}>Узнать подробнее</Button>
-					<Button 
-						appearance={'ghost'} 
-						arrow={isReviewOpened ? 'down' : 'right'} 
+					<Button
+						appearance={'ghost'}
+						arrow={isReviewOpened ? 'down' : 'right'}
 						className={style.reviewButton}
 						onClick={handleReviewOpened}
 					>Читать отзывы
@@ -79,13 +80,14 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 				[style.opened]: isReviewOpened,
 				[style.closed]: !isReviewOpened,
 			})}>
-				{product.reviews.map( r => 
-				(
-				<Review 
-					key={r._id} 
-					review={r}
-					/>
-				))}
+				{product.reviews.map(r =>
+					<>
+						<Review key={r._id} review={r} />
+						<Divider />
+						<ReviewForm productId = {product._id} />
+						<Divider />
+					</>
+				)}
 			</Card>
 		</>
 	)

@@ -11,9 +11,9 @@ import { IReviewForm } from './ReviewForm.interface';
 
 export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps): JSX.Element => {
 
-   const {  register, control, handleSubmit} = useForm<IReviewForm>();
+   const { register, control, handleSubmit} = useForm<IReviewForm>();
 
-   const onSubmit = (data: any) => {
+   const onSubmit = (data: IReviewForm) => {
       console.log(data);
    }
 
@@ -36,15 +36,15 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
                <Controller 
                   control={control}
                   name='rating'
-                  render={({field}) => (
-                     <Rating isEditable rating={field.value} setRating={field.onChange}/>
+                  render={({ field }) => (
+                     <Rating isEditable rating={field.value} ref={field.ref} setRating={field.onChange}/>
                   )}              
                />
                
             </div>
             <Textarea {...register('description')} placeholder='Текст отзыва' className={style.description} />
             <div className={style.submit}>
-               <Button appearance='primary'>
+               <Button appearance='primary' type='submit'>
                   Отправить
                </Button>
                <span className={style.info}>

@@ -18,7 +18,7 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 	const handleReviewOpened = () => {
 		setIsReviewOpened(!isReviewOpened);
 	}
-	console.log('product :>> ', product);
+	// console.log('product :>> ', product);
 	return (
 		<>
 			<Card className={style.product}>
@@ -47,7 +47,7 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 				<div className={style.description}>{product.description}</div>
 				<div className={style.feature}>
 					{product.characteristics.map(c => (
-						<div className={style.characteristics}>
+						<div className={style.characteristics} key={c.name}>
 							<span className={style.characteristicsName}>{c.name}</span>
 							<span className={style.characteristicsDot}></span>
 							<span className={style.characteristicsValue}>{c.value}</span>
@@ -81,12 +81,12 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 				[style.closed]: !isReviewOpened,
 			})}>
 				{product.reviews.map(r =>
-					<>
-						<Review key={r._id} review={r} />
+					<div key={r._id}>
+						<Review review={r} />
 						<Divider />
 						<ReviewForm productId = {product._id} />
 						<Divider />
-					</>
+					</div>
 				)}
 			</Card>
 		</>

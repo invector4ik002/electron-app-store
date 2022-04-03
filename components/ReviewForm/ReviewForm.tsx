@@ -14,17 +14,16 @@ import { IReviewForm, IReviewSentResponse } from './ReviewForm.interface';
 import { API } from '../../helpers/api';
 
 export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps): JSX.Element => {
+   
    const [isSuccess, setIsSuccess] = useState<boolean>(false);
    const [error, setIsError] = useState<string>();
 
    const { register, control, handleSubmit, formState: { errors }, reset } = useForm<IReviewForm>();
 
-
-   // productId
    const onSubmit = async (formData: IReviewForm) => {
       try {
-         const { data } = await axios.post<IReviewSentResponse>(API.review.createDemo, { ...formData, });
-         // console.log(data);
+         const { data } = await axios.post<IReviewSentResponse>(API.review.createDemo, { ...formData, productId});
+
          if (data.message) {
             setIsSuccess(true);
             reset();
@@ -34,7 +33,6 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
       } catch (e: any) {
          setIsError(e.message);
       }
-      // console.log('formData', formData);
    }
 
    return (

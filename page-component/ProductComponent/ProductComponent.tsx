@@ -3,7 +3,7 @@ import { ProductComponentProps } from './ProductComponentProps';
 import { Htag, Tag, DataHh, Advantages, P, Sort, Product } from '../../components';
 import { TopLevelCategory } from '../../interfaces/page.interfaces';
 import { SortEnum } from '../../components/Sort/Sort.props';
-import { useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import { sortReducer } from './sort.reducer';
 
 export const ProductComponent = ({ products, page, firstCategory }: ProductComponentProps): JSX.Element => {
@@ -14,6 +14,10 @@ const [{ products: sortedProducts, sort }, dispathSort] = useReducer(sortReducer
 const setSort = (sort: SortEnum) => {
   dispathSort({ type: sort });
 };
+
+useEffect (() => {
+  dispathSort({ type: 'reset', initialState: products });
+},[products])
 
   return (
     <div className={style.wrapper}>

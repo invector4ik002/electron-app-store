@@ -33,17 +33,36 @@
 	margin: 20px 0 0 0;
 }
 
+.error {
+	background-color: var(--red-light);
+	border-radius: 5px;
+	padding: 15px;
+	position: relative;
+	margin: 20px 0 0 0;
+}
+
+.error, .closeIconError path {
+	stroke: var(--red);
+}
+
 .successTitle {
 	font-weight: bold;
 	margin: 0 0 5px 0;
 }
 
-.closeIcon {
+.closeIcon, .closeIconError {
 	position: absolute;
 	top: 11px;
 	right: 13px;
 	cursor: pointer;
 }
+
+/* .closeIconError {
+	position: absolute;
+	top: 11px;
+	right: 13px;
+	cursor: pointer;
+} */
 
 @media screen and (max-width: 1100px) {
 

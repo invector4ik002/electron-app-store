@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { useState, useEffect, forwardRef, ForwardedRef } from 'react';
 import StarIcon from './Vector.svg';
 
-export const Rating = forwardRef(({ isEditable = false, setRating, rating, className, ...props }: RatingProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
+export const Rating = forwardRef(({ isEditable = false, error, setRating, rating, className, ...props }: RatingProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
 
   const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
 
@@ -56,8 +56,11 @@ export const Rating = forwardRef(({ isEditable = false, setRating, rating, class
     setRating(idx);
   }
   return (
-    <div {...props}>
-      {ratingArray.map((star, idx) => <span key={idx} ref={ref} >{star}</span>)}
+    <div {...props} className={cn(style.ratingWrapper, {
+      [style.error]: error,
+    })}>
+      {ratingArray.map((star, idx) => <span key={idx} ref={ref}>{star}</span>)}
+      {error && <span className={style.errorMessage}>{error.message}</span>}
     </div>
   )
 })

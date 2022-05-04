@@ -10,7 +10,6 @@ export const ProductComponent = ({ products, page, firstCategory }: ProductCompo
   // console.log('page :>> ', page);
   // console.log('products :>> ', products);
 const [{ products: sortedProducts, sort }, dispathSort] = useReducer(sortReducer, { products, sort: SortEnum.Rating });
-
 const setSort = (sort: SortEnum) => {
   dispathSort({ type: sort });
 };

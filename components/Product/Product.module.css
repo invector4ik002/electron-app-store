@@ -145,17 +145,10 @@
 	margin:0 0 10px 0;
 }
 
-.closed {
+.reviews {
 	overflow: hidden;
-	max-height: 0;
-	padding: 0;
-}
-
-.opened {
-	max-height: auto;
 	padding: 30px;
 }
-
 
 .rateTitle {
 	color: var(--primary)

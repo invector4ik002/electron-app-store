@@ -31,4 +31,7 @@ a {
 	--green: #1DC47E;
 	--green-light: #1DC37E;
 	--font-family: "Noto Sans Display", sans-serif;
+
+	--mobileMenuZ: 10;
+	--menuCloseZ: 11;
 }

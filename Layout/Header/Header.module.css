@@ -1,8 +1,5 @@
 .header {
-    display: grid;
-    grid-template-columns: 1fr 40px;
-    gap: 10px;
-    margin: 15px 15px 0 15px;
+    display: none;
 }
 .mobileMenu {
     position: fixed;
@@ -22,4 +19,13 @@
    z-index: var(--menuCloseZ);
    top: 15px;
    right: 15px;
+}
+
+@media (max-width: 750px) {
+	.header {
+        display: grid;
+        grid-template-columns: 1fr 40px;
+        gap: 10px;
+        margin: 15px 15px 0 15px;
+    }
 }

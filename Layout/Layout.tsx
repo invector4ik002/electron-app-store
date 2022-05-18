@@ -7,11 +7,30 @@ import { Footer } from './Footer/Footer';
 import { AppContextProvider, IAppContext } from '../context/app.context';
 import { FunctionComponent } from 'react';
 import { Up } from '../components';
+import React from 'react';
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
 
+	const [isSkipLinkDisplayed, setIsSkipLinkDisplayed] = React.useState<boolean>(false);
+
+	const skipContentAction = (key: React.KeyboardEvent) => {
+		if (key.code == 'Space' || key.code == 'Enter') {
+			
+		}
+		setIsSkipLinkDisplayed(false);
+	};
+
 	return (
 		<div className={styles.wrapper}>
+			<a
+				onFocus={() => setIsSkipLinkDisplayed(true)}
+				tabIndex={1} 
+				className={cn(styles.skipLink, {
+				[styles.displayed]: isSkipLinkDisplayed,})}
+				onKeyDown={skipContentAction}
+			>
+				Сразу к содержанию
+			</a>
 			<Header className={styles.header}/>
 			<Sidebar className={styles.sidebar}/>
 				<main className={styles.body}>

@@ -12,10 +12,12 @@ import React from 'react';
 const Layout = ({ children }: LayoutProps): JSX.Element => {
 
 	const [isSkipLinkDisplayed, setIsSkipLinkDisplayed] = React.useState<boolean>(false);
+	const bodyRef = React.useRef<HTMLDivElement>(null);
 
 	const skipContentAction = (key: React.KeyboardEvent) => {
 		if (key.code == 'Space' || key.code == 'Enter') {
-			
+			key.preventDefault;
+			bodyRef.current?.focus();
 		}
 		setIsSkipLinkDisplayed(false);
 	};
@@ -33,7 +35,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
 			</a>
 			<Header className={styles.header}/>
 			<Sidebar className={styles.sidebar}/>
-				<main className={styles.body}>
+				<main className={styles.body} ref={bodyRef} tabIndex={0}>
 					{children}
 				</main>
 			<Footer className={styles.footer}/>

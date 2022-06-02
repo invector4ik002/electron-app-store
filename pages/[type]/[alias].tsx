@@ -10,11 +10,16 @@ import { withLayout } from "../../Layout/Layout";
 import { firstLevelMenu } from "../../helpers/helpers";
 import { ProductComponent } from "../../page-component";
 import { API } from "../../helpers/api";
+import Head from 'next/head';
 
 function Course({ menu, page, products, firstCategory }: CourseProps): JSX.Element {
 
   return (
     <>
+    <Head>
+      <title>{page.metaTitle}</title>
+      <meta name='description' content={page.metaDescription}/>
+    </Head>
       <ProductComponent
         firstCategory={firstCategory}
         products={products}

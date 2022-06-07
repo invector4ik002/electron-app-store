@@ -1,13 +1,14 @@
 .reviewForm {
+	display: grid;
+
 	font-size: 14px;
 	line-height: 24px;
-
-	display: grid;
 	grid-template-columns: [start] auto 1fr auto [end];
 	gap: 20px 30px;
 }
 
-.description, .submit {
+.description,
+.submit {
 	grid-column: start / end;
 }
 
@@ -26,34 +27,42 @@
 }
 
 .success {
-	background-color: #85ffcc;
-	border-radius: 5px;
-	padding: 15px;
 	position: relative;
-	margin: 20px 0 0 0;
+
+	margin: 20px 0 0;
+	padding: 15px;
+
+	border-radius: 5px;
+	background-color: #85FFCC;
 }
 
 .error {
-	background-color: var(--red-light);
-	border-radius: 5px;
-	padding: 15px;
 	position: relative;
-	margin: 20px 0 0 0;
+
+	margin: 20px 0 0;
+	padding: 15px;
+
+	border-radius: 5px;
+	background-color: var(--red-light);
 }
 
-.error, .closeIconError path {
+.error,
+.closeIconError path {
 	stroke: var(--red);
 }
 
 .successTitle {
+	margin: 0 0 5px;
+
 	font-weight: bold;
-	margin: 0 0 5px 0;
 }
 
-.closeIcon, .closeIconError {
+.closeIcon,
+.closeIconError {
 	position: absolute;
 	top: 11px;
 	right: 13px;
+
 	cursor: pointer;
 }
 
@@ -65,7 +74,6 @@
 } */
 
 @media screen and (max-width: 1100px) {
-
 	.reviewForm {
 		grid-template-columns: [start] auto 1fr [end];
 	}
@@ -80,7 +88,6 @@
 }
 
 @media screen and (max-width: 640px) {
-
 	.reviewForm {
 		grid-template-columns: [start] 1fr [end];
 	}

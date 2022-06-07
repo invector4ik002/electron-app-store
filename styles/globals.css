@@ -27,11 +27,10 @@ a {
 	--primary: #7653FC;
 	--primary-hover: #6344DF;
 	--red: #FC836D;
-	--red-light: #fea291;
+	--red-light: #FEA291;
 	--green: #1DC47E;
 	--green-light: #1DC37E;
 	--font-family: "Noto Sans Display", sans-serif;
-
-	--mobileMenuZ: 10;
-	--menuCloseZ: 11;
+	--mobile-menu-z: 10;
+	--menu-close-z: 11;
 }

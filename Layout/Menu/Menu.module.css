@@ -24,6 +24,8 @@
 }
 
 .secondLevelBlock {
+	overflow: hidden;
+
 	margin-bottom: 10px;
 
 	cursor: pointer;
@@ -39,17 +41,11 @@
 .secondBlock {
 	margin: 15px 0 0 12px;
 	padding-left: 37px;
+
 	white-space: nowrap;
+
 	border-left: 2px solid #DFDFDF;
 }
-
-.secondLevelBlock {
-	overflow: hidden;
-}
-
-/* .secondLevelBlockOpened {
-	display: block;
-} */
 
 .thirdLevel {
 	display: block;
@@ -57,11 +53,11 @@
 	/* margin-bottom: 10px; */
 	cursor: pointer;
 
-	font-size: 11px;
-	font-weight: 500;
 	/* line-height: 16px; */
 	outline-offset: -1px;
-	
+
+	font-size: 11px;
+	font-weight: 500;
 }
 
 .thirdLevelActive,

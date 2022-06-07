@@ -3,8 +3,9 @@
 }
 
 .star svg {
-	margin-right: 5px;
 	display: inline-block;
+
+	margin-right: 5px;
 }
 
 .editable {
@@ -19,6 +20,7 @@
 	position: absolute;
 	bottom: -10px;
 	left: 0;
+
 	color: var(--red);
 }
 

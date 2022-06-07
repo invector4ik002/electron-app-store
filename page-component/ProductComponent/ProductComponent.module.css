@@ -53,7 +53,6 @@
 	margin: 0 5px 5px 0;
 }
 
-
 @media screen and (max-width: 640px) {
 	.title {
 		grid-template-columns: auto 1fr;

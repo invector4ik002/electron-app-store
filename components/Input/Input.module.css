@@ -4,6 +4,7 @@
 	color: var(--black);
 	border: none;
 	border-radius: 5px;
+
 	/* border: 1px solid var(--primary); */
 	outline-color: var(--primary);
 	background: var(--white);
@@ -31,5 +32,6 @@
 	position: absolute;
 	bottom: -20px;
 	left: 0;
+
 	color: var(--red);
 }

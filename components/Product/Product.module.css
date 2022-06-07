@@ -12,9 +12,10 @@
 		[ratestart] auto
 		[end];
 
-	margin: 30px 0 0 0;
+	margin: 30px 0 0;
 	padding: 30px;
 }
+
 .category {
 	margin: 7px 5px 0 0;
 }
@@ -33,18 +34,21 @@
 .price,
 .priceTitle {
 	grid-column: pricestart / priceend;
+
 	white-space: nowrap;
 }
 
 .credit,
 .creditTitle {
 	grid-column: creditstart / creditend;
+
 	white-space: nowrap;
 }
 
 .rating,
 .rateTitle {
 	grid-column: ratestart / end;
+
 	white-space: nowrap;
 }
 
@@ -56,6 +60,10 @@
 
 .advBlock {
 	grid-column: middle / end;
+
+	font-size: 16px;
+	line-height: 22px;
+	grid-area: advBlock;
 }
 
 .feature {
@@ -92,27 +100,26 @@
 	margin: 0 0 0 30px;
 }
 
-.advBlock {
-	font-size: 16px;
-	line-height: 22px;
-}
-
 .disAdvantages {
-	margin: 20px 0 0 0;
+	margin: 20px 0 0;
 	padding-left: 10px;
+
 	border-left: 2px solid var(--red);
 }
 
 .advTitle {
+	margin: 0 0 5px;
+
 	font-weight: bold;
-	margin: 0 0 5px 0;
 }
 
 .advantages {
+	padding-left: 10px;
+
+	border-left: 2px solid var(--green);
+
 	font-size: 16px;
 	line-height: 22px;
-	padding-left: 10px;
-	border-left: 2px solid var(--green);
 }
 
 .oldPrice {
@@ -120,38 +127,40 @@
 }
 
 .description {
-	margin: 0 0 14px 0;
+	margin: 0 0 14px;
 }
 
 .characteristics {
 	display: grid;
 	grid-template-columns: auto 1fr auto;
+
 	margin: 0 60px 0 0;
 	gap: 10px;
 
 	font-size: 16px;
-	line-height: 32px
+	line-height: 32px;
 }
 
 .characteristicsName {
-	font-weight: 700;
 	font-size: 16px;
+	font-weight: 700;
 	line-height: 32px;
 }
 
 .characteristicsDot {
+	margin: 0 0 10px;
+
 	border-bottom: 1px dashed var(--grey-dark);
-	
-	margin:0 0 10px 0;
 }
 
 .reviews {
 	overflow: hidden;
+
 	padding: 30px;
 }
 
 .rateTitle {
-	color: var(--primary)
+	color: var(--primary);
 }
 
 @media screen and (max-width: 1320px) {
@@ -165,34 +174,35 @@
 			auto
 			40px
 			1fr;
-			grid-template-areas:
-				'logo . title title title title title'
-				'logo . tags tags tags tags tags'
-				'price price price . credit . rating'
-				'priceTitle priceTitle priceTitle . creditTitle . rateTitle'
-				'hr hr hr hr hr hr hr'
-				'description description description description description description description'
-				'feature feature feature feature feature feature feature'
-				'advBlock advBlock advBlock advBlock advBlock advBlock advBlock'
-				'hr2 hr2 hr2 hr2 hr2 hr2 hr2'
-				'actions actions actions actions actions actions actions'
-			;
+		grid-template-areas:
+			"logo . title title title title title"
+			"logo . tags tags tags tags tags"
+			"price price price . credit . rating"
+			"priceTitle priceTitle priceTitle . creditTitle . rateTitle"
+			"hr hr hr hr hr hr hr"
+			"description description description description description description description"
+			"feature feature feature feature feature feature feature"
+			"advBlock advBlock advBlock advBlock advBlock advBlock advBlock"
+			"hr2 hr2 hr2 hr2 hr2 hr2 hr2"
+			"actions actions actions actions actions actions actions";
+
 		/* margin: 0 0 30px;
 		padding: 30px; */
 	}
 
 	.logo {
 		grid-area: logo;
-		margin: 0 0 20px 0;
+
+		margin: 0 0 20px;
 	}
 
 	.title {
 		grid-area: title;
 	}
 
- 	.rateTitle {
+	.rateTitle {
 		grid-area: rateTitle;
- 	}
+	}
 
 	.credit {
 		grid-area: credit;
@@ -208,7 +218,7 @@
 
 	.creditTitle {
 		grid-area: creditTitle;
- 	}
+	}
 
 	.tags {
 		grid-area: tags;
@@ -228,11 +238,8 @@
 
 	.feature {
 		grid-area: feature;
-		margin: 0 0 20px 0;
-	}
 
-	.advBlock {
-		grid-area: advBlock;
+		margin: 0 0 20px;
 	}
 
 	.hr2 {
@@ -242,7 +249,6 @@
 	.actions {
 		grid-area: actions;
 	}
-	
 }
 
 @media screen and (max-width: 640px) {
@@ -251,80 +257,75 @@
 		grid-template-columns:
 			70px
 			30px
-
 			1fr;
-			grid-template-areas:
-				'logo . title'
-				'logo . tags'
-				'priceTitle priceTitle price'
-				'creditTitle creditTitle credit'
-				'rateTitle rateTitle rating'
-				/* 'price price price . credit . rating' */
-				'hr hr hr'
-				'description description description'
-				'feature feature feature'
-				'advBlock advBlock advBlock'
-				'hr2 hr2 hr2'
-				'actions actions actions'
-			;
+		grid-template-areas:
+			"logo . title"
+			"logo . tags"
+			"priceTitle priceTitle price"
+			"creditTitle creditTitle credit"
+			"rateTitle rateTitle rating"
+			"hr hr hr"
+			"description description description"
+			"feature feature feature"
+			"advBlock advBlock advBlock"
+			"hr2 hr2 hr2"
+			"actions actions actions";
+
 		/* margin: 0 0 30px;
 		padding: 30px; */
 	}
 
 	.logo {
-		margin: 0 0 10px 0;
+		margin: 0 0 10px;
 	}
 
 	.credit {
-		margin: 0 0 10px 0;
+		margin: 0 0 10px;
 	}
 
 	.rating {
-		margin: 0 0 10px 0;
+		margin: 0 0 10px;
 	}
 
 	.price {
-		margin: 0 0 10px 0;
+		margin: 0 0 10px;
 	}
 
 	.tags {
-		margin: 0 0 10px 0;
+		margin: 0 0 10px;
 	}
-
 }
 
 @media screen and (max-width: 480px) {
 	.product {
 		display: grid;
 		grid-template-columns: 1fr;
-			grid-template-areas:
-				'logo'
-				'title'
-				'tags'
-				'price'
-				'priceTitle'
-				'credit'
-				'creditTitle'
-				'rating'
-				'rateTitle'
-				'hr'
-				'description'
-				'feature '
-				'advBlock'
-				'hr2'
-				'actions'
-			;
+		grid-template-areas:
+			"logo"
+			"title"
+			"tags"
+			"price"
+			"priceTitle"
+			"credit"
+			"creditTitle"
+			"rating"
+			"rateTitle"
+			"hr"
+			"description"
+			"feature "
+			"advBlock"
+			"hr2"
+			"actions";
 	}
 
-	.price, 
-	.credit, 
+	.price,
+	.credit,
 	.rating {
-		margin: 0 0 0 0;
+		margin: 0;
 	}
 
-	.priceTitle, 
+	.priceTitle,
 	.creditTitle {
-		margin: 0 0 10px 0;
+		margin: 0 0 10px;
 	}
-
 }

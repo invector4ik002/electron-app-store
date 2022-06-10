@@ -64,7 +64,7 @@ export const Rating = forwardRef(({ isEditable = false, error, setRating, rating
     }
     setRating(idx);
   }
-  const handleKey = (e: KeyboardEvent<SVGElement>) => {
+  const handleKey = (e: any) => {
 
     if (!isEditable || !setRating) {
       return

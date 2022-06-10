@@ -14,23 +14,24 @@ import Head from 'next/head';
 
 function Course({ menu, page, products, firstCategory }: CourseProps): JSX.Element {
 
-  return (
-    <>
-    <Head>
-      <title>{page.metaTitle}</title>
-      <meta name='description' content={page.metaDescription}/>
-      <meta property='og:title' content={page.metaTitle}/>
-      <meta property='og:description' content={page.metaDescription}/>
-      <meta property='og:type' content='article'/>
-    </Head>
+  return <>
+    {page && products && <>
+      <Head>
+        <title>{page.metaTitle}</title>
+        <meta name='description' content={page.metaDescription} />
+        <meta property='og:title' content={page.metaTitle} />
+        <meta property='og:description' content={page.metaDescription} />
+        <meta property='og:type' content='article' />
+      </Head>
       <ProductComponent
         firstCategory={firstCategory}
         products={products}
         page={page}
-      />
-    </>
-  )
+      /></>
+    }
+    </>;
 }
+
 
 export default withLayout(Course);
 

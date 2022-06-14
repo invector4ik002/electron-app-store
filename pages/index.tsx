@@ -2,10 +2,13 @@ import React from "react";
 import { GetStaticProps } from 'next';
 import axios from "axios";
 
-import { Htag, Button, P, Tag, Rating, Input, Textarea } from "../components";
+import { Htag, Button, P, Tag } from "../components";
 import { MenuItem } from "../interfaces/menu.interfaces";
 import { withLayout } from "../Layout/Layout";
 import { API } from "../helpers/api";
+import Input from "../components/Input/Input";
+import Rating from "../components/Rating/Rating";
+import Textarea from "../components/Textarea/Textarea";
 
 export function Home({ menu }: HomProps) {
   const [rating, setRating] = React.useState<number>(4)

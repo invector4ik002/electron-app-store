@@ -5,13 +5,13 @@ import cn from 'classnames';
 
 import { ReviewFormProps } from './ReviewForm.props';
 import style from './ReviewForm.module.css';
-import { Input } from '../Input/Input';
-import { Rating } from '../Rating/Rating';
-import { Textarea } from '../Textarea/Textarea';
+import Input from '../Input/Input';
 import { Button } from '../Button/Button';
 import CloseIcon from './close.svg';
 import { IReviewForm, IReviewSentResponse } from './ReviewForm.interface';
 import { API } from '../../helpers/api';
+import Rating from '../Rating/Rating';
+import Textarea from '../Textarea/Textarea';
 
 export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewFormProps): JSX.Element => {
 

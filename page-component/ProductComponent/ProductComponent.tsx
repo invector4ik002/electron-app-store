@@ -6,7 +6,6 @@ import { SortEnum } from '../../components/Sort/Sort.props';
 import { useEffect, useReducer } from 'react';
 import { sortReducer } from './sort.reducer';
 
-
 export const ProductComponent = ({ products, page, firstCategory }: ProductComponentProps): JSX.Element => {
    // console.log('page :>> ', page);
    // console.log('products :>> ', products);

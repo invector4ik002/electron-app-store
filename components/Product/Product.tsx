@@ -2,9 +2,8 @@ import React, { ForwardedRef, forwardRef, useRef, useState } from 'react';
 import { ProductProps } from './Product.props';
 import style from './Product.module.css';
 import cn from 'classnames';
-import { Card } from '../Card/Card';
+import  Card  from '../Card/Card';
 import { declOfNum, priceRu } from '../../helpers/helpers';
-import { Rating } from '../Rating/Rating';
 import { Tag } from '../Tag/Tag';
 import { Button } from '../Button/Button';
 import { Divider } from '../Divider/Divider';
@@ -12,8 +11,9 @@ import Image from 'next/image';
 import { Review } from '../Review/Review';
 import { ReviewForm } from '../ReviewForm/ReviewForm';
 import { motion } from 'framer-motion';
+import Rating from '../Rating/Rating';
 
-export const Product = motion(forwardRef(({ product, className, ...props }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
+ export const Product = motion(forwardRef(({ product, className, ...props }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
 
 	const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
 	const reviewRef = useRef<HTMLDivElement>(null);
@@ -112,4 +112,7 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
 			</motion.div>
 		</div>
 	)
-}))
+}));
+
+// Product.displayName = 'Product';
+// export default Product;

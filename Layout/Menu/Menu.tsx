@@ -69,7 +69,7 @@ export const Menu = (): JSX.Element => {
 		)
 	};
 
-	const openSecondLevelKey = (key: KeyboardEvent, secondCategory: string) => {
+	const openSecondLevelKey = (key: React.KeyboardEvent, secondCategory: string) => {
 		if (key.code == 'Space' || key.code == 'Enter') {
 			key.preventDefault();
 			openSecondLevel(secondCategory);

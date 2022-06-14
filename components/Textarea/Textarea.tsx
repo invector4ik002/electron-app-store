@@ -3,7 +3,7 @@ import style from './Textarea.module.css';
 import cn from 'classnames';
 import { ForwardedRef, forwardRef } from 'react';
 
-export const Textarea = forwardRef(({ className, error, ...props }: TextareaProps, ref: ForwardedRef<HTMLTextAreaElement>): JSX.Element => {
+const Textarea = forwardRef(({ className, error, ...props }: TextareaProps, ref: ForwardedRef<HTMLTextAreaElement>): JSX.Element => {
 
 	return (
 		<div className={cn(style.textareaWrapper, className)}>
@@ -13,4 +13,7 @@ export const Textarea = forwardRef(({ className, error, ...props }: TextareaProp
 			{error && <span className={style.errorMessage}>{error.message}</span>}
 		</div>
 	)
-})
+});
+
+Textarea.displayName = 'Textarea'
+export default Textarea;

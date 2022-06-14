@@ -1,8 +1,8 @@
 import { DataHhProps } from './DataHh.props';
 import style from './DataHh.module.css';
-import { Card } from '..';
 import RateIcon from './rate.svg'
 import { priceRu } from '../../helpers/helpers';
+import Card from '../Card/Card';
 /**
  * Компонент информации по рабочим местам и оплаты труда портала hh.ru
  * @param param0 

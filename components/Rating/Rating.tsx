@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { useState, useEffect, forwardRef, ForwardedRef, useRef } from 'react';
 import StarIcon from './Vector.svg';
 
-export const Rating = forwardRef(({ isEditable = false, error, setRating, rating, className, tabIndex, ...props }: RatingProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
+const Rating = forwardRef(({ isEditable = false, error, setRating, rating, className, tabIndex, ...props }: RatingProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
 
   const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
   const ratingArrayRef = useRef<(HTMLSpanElement | null)[]>([])
@@ -20,11 +20,11 @@ export const Rating = forwardRef(({ isEditable = false, error, setRating, rating
     }
 
     if (!rating && i == 0) {
-      return tabIndex?? 0;
+      return tabIndex ?? 0;
     }
 
     if (r == i + 1) {
-      return tabIndex?? 0;
+      return tabIndex ?? 0;
     }
     return -1;
   };
@@ -33,6 +33,7 @@ export const Rating = forwardRef(({ isEditable = false, error, setRating, rating
     const updateRating = ratingArray.map((star: JSX.Element, idx: number) => {
       return (
         <span
+          key={idx}
           className={cn(style.star, {
             [style.filled]: idx < currentRating,
             [style.editable]: isEditable
@@ -88,11 +89,13 @@ export const Rating = forwardRef(({ isEditable = false, error, setRating, rating
   }
 
   return (
-    <div {...props} className={cn(style.ratingWrapper, {
+    <div  {...props} className={cn(style.ratingWrapper, {
       [style.error]: error,
     })}>
       {ratingArray.map((star, idx) => <span key={idx}>{star}</span>)}
       {error && <span className={style.errorMessage}>{error.message}</span>}
     </div>
   )
-})
+});
+Rating.displayName = 'Rating'
+export default Rating;
